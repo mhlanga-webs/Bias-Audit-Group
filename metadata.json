@@ -1,0 +1,5 @@
+{
+  "name": "AI Bias Audit & Mitigation Toolkit",
+  "description": "An interactive web application to analyze bias in machine learning models, understand fairness metrics, explore mitigation strategies, and generate ethical frameworks for responsible AI deployment.",
+  "requestFramePermissions": []
+}
