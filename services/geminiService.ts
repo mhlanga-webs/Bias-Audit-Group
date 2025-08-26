@@ -1,7 +1,13 @@
 import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
 
-// As per guidelines, the API key is sourced from environment variables.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY! });
+// The API key is now sourced from the window object, where it's set in index.html.
+const apiKey = (window as any).GEMINI_API_KEY;
+
+if (!apiKey) {
+  throw new Error("API key not found. Please ensure it is set in index.html");
+}
+
+const ai = new GoogleGenAI({ apiKey: apiKey });
 
 /**
  * Generates an ethics framework for a loan approval AI model using the Gemini API.
